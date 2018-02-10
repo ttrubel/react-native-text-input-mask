@@ -70,6 +70,10 @@ public class RNTextInputMaskModule extends ReactContextBaseJavaModule {
       final Activity currentActivity = this.reactContext.getCurrentActivity();
       final ReactApplicationContext rctx = this.reactContext;
 
+      if (currentActivity == null) {
+        return;
+      }
+
       currentActivity.runOnUiThread(new Runnable() {
         @Override
         public void run() {
